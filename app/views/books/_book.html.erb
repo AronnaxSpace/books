@@ -1,6 +1,13 @@
-<div id="<%= dom_id book %>" class="card relative">
+<div id="<%= dom_id book %>" class="card relative max-w-lg">
   <% unless controller_name == "books" && action_name == "show" %>
     <%= link_to "", book, class: "absolute top-0 left-0 w-full h-full" %>
   <% end %>
-  <h2><%= book.title %></h2>
+  <div class="text-center">
+    <span class="inline-block max-w-[350px] rounded-md overflow-hidden">
+      <% image = book.cover.attached? ? book.cover : 'cover-placeholder.webp' %>
+      <%= image_tag image %>
+    </span>
+  </div>
+
+  <h3><%= book.title %></h3>
 </div>
