@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<h1><%= t(".title") %></h1>
+
+<%= link_to t(".new"), new_author_path %>
+
+<table id="authors" class="table">
+  <% @authors.each do |author| %>
+    <tr>
+      <td>
+        <div class="rounded-md overflow-hidden w-[100px] h-[100px]">
+          <%= link_to author do %>
+            <% portrait = author.portrait.attached? ? author.portrait.variant(:thumb) : 'portrait-placeholder.webp' %>
+            <%= image_tag portrait %>
+          <% end %>
+        </div>
+      </td>
+      <td>
+        <%= link_to author do %>
+          <%= author.name %>
+        <% end %>
+      </td>
+      <td>
+        <%= author.books.count %>
+      </td>
+    </th>
+  <% end %>
+</table>

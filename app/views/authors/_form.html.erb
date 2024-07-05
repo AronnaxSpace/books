@@ -1,0 +1,24 @@
+<%= form_with(model: author) do |form| %>
+  <% if author.errors.any? %>  
+    <%= render "shared/errors", resource: author %>
+  <% end %>
+
+    <div class="form-group">
+    <%= form.label :portrait, class: "form-label" %>
+    <%= form.file_field :portrait, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :first_name, class: "form-label" %>
+    <%= form.text_field :first_name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :last_name, class: "form-label" %>
+    <%= form.text_field :last_name, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.submit nil, class: "btn" %>
+  </div>
+<% end %>
