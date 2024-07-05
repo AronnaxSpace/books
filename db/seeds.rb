@@ -2,6 +2,14 @@
 
 require 'faker'
 
+# Create 5 users
+5.times do |i|
+  user = FactoryBot.build(:user, email: "user-#{i + 1}@aronnax.space")
+  user.password = '5uper5ecret5tr1ng'
+  user.save!
+  p "User '#{user.email}' created"
+end
+
 # Create 10 authors
 10.times do |i|
   author = FactoryBot.build(:author)
