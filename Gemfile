@@ -73,3 +73,5 @@ group :test do
   gem "simplecov", "~> 0.22.0", require: false
   gem "timecop", "~> 0.9.10"
 end
+
+gem "devise", "~> 4.9"
