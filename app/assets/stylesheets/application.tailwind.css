@@ -60,4 +60,13 @@
   .card {
     @apply bg-white dark:bg-gray-800 rounded-md shadow-sm p-4;
   }
+
+  /* table */
+  .table {
+    @apply bg-white dark:bg-gray-800 border-collapse;
+  }
+
+  .table th, .table td {
+    @apply border dark:border-gray-600 px-4 py-2;
+  }
 }
