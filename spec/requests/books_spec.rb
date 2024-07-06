@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 describe '/books', type: :request do
+  let(:user) { create(:user, :admin) }
   let(:valid_attributes) do
     {
       title: Faker::Book.title
@@ -11,6 +12,10 @@ describe '/books', type: :request do
     {
       title: nil
     }
+  end
+
+  before do
+    sign_in user
   end
 
   describe 'GET /index' do

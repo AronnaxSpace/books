@@ -1,4 +1,5 @@
 describe '/authors', type: :request do
+  let(:user) { create(:user, :admin) }
   let(:valid_attributes) do
     {
       first_name: 'John',
@@ -10,6 +11,10 @@ describe '/authors', type: :request do
     {
       first_name: ''
     }
+  end
+
+  before do
+    sign_in user
   end
 
   describe 'GET /index' do

@@ -2,6 +2,9 @@
 
 # AuthorsController
 class AuthorsController < ApplicationController
+  before_action :authenticate_user!, except: %i[index show]
+  before_action :authorize_user!
+
   helper_method :author
 
   def index
@@ -41,6 +44,12 @@ class AuthorsController < ApplicationController
   end
 
   private
+
+  def authorize_user!
+    authorize(author) if params[:id].present?
+
+    authorize(Author)
+  end
 
   def author
     @author ||= Author.find(params[:id])
