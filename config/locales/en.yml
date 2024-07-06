@@ -2,6 +2,13 @@ en:
   hello: "Hello world"
   are_you_sure: "Are you sure?"
 
+  header:
+    books: "Books"
+    authors: "Authors"
+    sign_in: "Sign in"
+    sign_up: "Sign up"
+    sign_out: "Sign out"
+
   authors:
     index:
       title: "Authors"

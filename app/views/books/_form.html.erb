@@ -1,6 +1,6 @@
 <%= form_with(model: book) do |form| %>
   <% if book.errors.any? %>
-    <%= render "shared/errors", resource: book %>
+    <%= render "shared/error_messages", resource: book %>
   <% end %>
 
   <div class="form-group">
