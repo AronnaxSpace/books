@@ -2,6 +2,9 @@
 
 # BooksController
 class BooksController < ApplicationController
+  before_action :authenticate_user!, except: %i[index show]
+  before_action :authorize_user!
+
   helper_method :book
 
   def index
@@ -41,6 +44,12 @@ class BooksController < ApplicationController
   end
 
   private
+
+  def authorize_user!
+    authorize(book) if params[:id].present?
+
+    authorize(Book)
+  end
 
   def book
     @book ||= Book.find(params[:id])
