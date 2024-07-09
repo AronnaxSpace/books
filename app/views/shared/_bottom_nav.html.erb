@@ -1,0 +1,31 @@
+<%
+  icon_css = "w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+  link_css = "inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
+%>
+
+<div class="fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 bg-white border border-gray-200 rounded-full bottom-4 left-1/2 dark:bg-gray-700 dark:border-gray-600">
+  <div class="grid h-full max-w-lg grid-cols-3 mx-auto">
+    <% if user_signed_in? %>
+      <%= link_to destroy_user_session_path,
+                  class: "#{ link_css } rounded-s-full",
+                  data: {
+                    turbo_method: :delete,
+                    turbo_confirm: t("are_you_sure")
+                  } do %>
+        <i class="fa-solid fa-arrow-right-from-bracket <%= icon_css %>"></i>
+      <% end %>
+    <% else %>
+      <%= link_to new_user_session_path,
+                  class: "#{ link_css } rounded-s-full" do %>
+        <i class="fa-solid fa-arrow-right-to-bracket <%= icon_css %>"></i>
+      <% end %>
+    <% end %>
+    <%= link_to root_path,
+                class: "#{ link_css }" do %>
+        <i class="fa-solid fa-house <%= icon_css %>"></i>
+    <% end %>
+    <%= button_tag class: "#{ link_css } rounded-e-full" do %>
+      <i class="fa-solid fa-bars <%= icon_css %>"></i>
+    <% end %>
+  </div>
+</div>
