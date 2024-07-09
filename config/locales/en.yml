@@ -3,13 +3,6 @@ en:
   are_you_sure: "Are you sure?"
   not_authorized: "You are not authorized to perform this action."
 
-  header:
-    books: "Books"
-    authors: "Authors"
-    sign_in: "Sign in"
-    sign_up: "Sign up"
-    sign_out: "Sign out"
-
   authors:
     index:
       title: "Authors"
