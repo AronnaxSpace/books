@@ -1,0 +1,14 @@
+<div id="drawer-modal" class="fixed top-0 left-0 z-50 flex flex-col h-full bg-white dark:bg-gray-800 transition-transform -translate-x-full" data-drawer-target="drawer">
+  <div class="shrink-0 p-2 pl-4 flex justify-between items-center gap-x-1 border-b">
+    <span class="font-semibold">Aronnax Books</span>
+    <label for="drawer-toggle" class="flex items-center justify-center w-8 h-8 text-gray-400 hover:text-gray-900 dark:hover:text-white bg-transparent hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg cursor-pointer">
+      <i class="fa-solid fa-xmark"></i>
+    </label>
+  </div>
+
+  <div class="flex-grow p-4 overflow-y-auto">
+    <%= turbo_frame_tag "drawer-content" do %>
+      <%= render "shared/spinner" %>
+    <% end %>
+  </div>
+</div>

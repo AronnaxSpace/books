@@ -10,11 +10,18 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-  <body>
-    <div class="container mx-auto px-3 mb-24">
-      <%= render "shared/flashes" %>
-      <%= yield %>
-      <%= render "shared/bottom_nav" %>
+  <body data-controller="drawer" class="overflow-hidden">
+    <div class="h-screen overflow-y-auto">
+      <%= render "shared/drawer/toggle" %>
+
+      <div class="container mx-auto px-3 pt-3 pb-24">
+        <%= render "shared/flashes" %>
+        <%= yield %>
+        <%= render "shared/bottom_nav" %>
+      </div>
+
+      <%= render "shared/drawer/modal" %>
+      <%= render "shared/drawer/backdrop" %>
     </div>
   </body>
 </html>
