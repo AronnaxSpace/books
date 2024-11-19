@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :book do
-    title { "MyString" }
+    title { Faker::Book.title }
   end
 end

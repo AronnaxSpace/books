@@ -65,7 +65,6 @@ end
 
 group :test do
   gem "database_cleaner-active_record"
-  gem "shoulda-matchers"
-  gem "simplecov"
+  gem "simplecov", require: false
   gem "timecop"
 end
