@@ -1,1 +1,107 @@
-// Sassy
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$danger-color: #dc3545;
+$warning-color: #ffc107;
+$info-color: #17a2b8;
+$border-color: #dee2e6;
+$label-color: #495057;
+$border-radius: 5px;
+$card-padding: 1rem;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* forms */
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  color: $label-color;
+}
+
+.form-action {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+}
+
+/* buttons */
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+
+  &.btn-primary {
+    background-color: $primary-color;
+    color: white;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+
+  &.btn-danger {
+    background-color: $danger-color;
+    color: white;
+
+    &:hover {
+      background-color: darken($danger-color, 10%);
+    }
+  }
+}
+
+/* list */
+
+.list-group {
+  padding-left: 1rem;
+}
+
+/* cards */
+
+.card {
+  padding: $card-padding;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+}
+
+/* banner */
+
+.banner {
+  @extend .card;
+
+  &.banner-primary {
+    background-color: lighten($primary-color, 30%);
+    border-color: $primary-color;
+  }
+
+  &.banner-danger {
+    background-color: lighten($danger-color, 30%);
+    border-color: $danger-color;
+  }
+}

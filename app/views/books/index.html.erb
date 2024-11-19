@@ -6,11 +6,11 @@
 
 <div id="books">
   <% @books.each do |book| %>
-    <%= render book %>
-    <p>
+    <div class="card" style="margin-bottom: 1rem;">
+      <%= render book %>
       <%= link_to "Show this book", book %>
-    </p>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New book", new_book_path %>
+<%= link_to "New book", new_book_path, class: "btn btn-primary" %>
