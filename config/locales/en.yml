@@ -32,3 +32,13 @@ en:
     attributes:
       book:
         title: "Title"
+        goodreads_url: "Goodreads URL"
+        year: "Year"
+    errors:
+      models:
+        book:
+          attributes:
+            goodreads_url:
+              invalid: "is not valid"
+            year:
+              cannot_be_in_the_future: "cannot be in the future"
