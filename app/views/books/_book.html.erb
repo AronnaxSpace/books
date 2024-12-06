@@ -1,9 +1,11 @@
 <div id="<%= dom_id book %>">
-  <% if book.cover.attached? %>
-    <p>
+  <p>
+    <% if book.cover.attached? %>
       <%= image_tag book.cover %>
-    </p>
-  <% end %>
+    <% else %>
+      <%= image_tag 'book_covers/cover-default.webp' %>
+    <% end %>
+  </p>
 
   <p>
     <strong><%= Book.human_attribute_name(:title) %>:</strong>

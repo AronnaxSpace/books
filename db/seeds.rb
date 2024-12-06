@@ -1,9 +1,12 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+require 'faker'
+require 'factory_bot_rails'
+
+20.times do
+  book = FactoryBot.build(:book)
+  if rand(2).zero?
+    cover = "book_covers/cover-#{rand(1..5)}.webp"
+    book.cover = File.open(Rails.root.join('app', 'assets', 'images', cover))
+  end
+  book.save!
+  p "Book '#{book.title}' created"
+end
