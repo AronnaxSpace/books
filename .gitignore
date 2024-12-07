@@ -37,3 +37,7 @@
 !/app/assets/builds/.keep
 
 /coverage
+
+.envrc
+
+/config/credentials/production.key
