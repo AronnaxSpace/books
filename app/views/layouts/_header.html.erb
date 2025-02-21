@@ -2,5 +2,11 @@
   <nav>
     <%= link_to "Books", books_path %>
     <%= link_to "Authors", authors_path %>
+    <%= link_to "Sign out",
+                destroy_user_session_path,
+                data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %>
   </nav>
 </header>

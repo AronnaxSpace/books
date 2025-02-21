@@ -10,6 +10,14 @@
 
 require "faker"
 
+(1..5).each do |i|
+  user = User.find_or_initialize_by(email: "user_#{i}@aronnax.space")
+  next if user.persisted?
+
+  user.update!(password: "Pa$$w0rD1")
+  puts "Created user #{user.email}"
+end
+
 loop do
   break if Author.count >= 5
 
