@@ -17,6 +17,13 @@
   </div>
 
   <div>
+    <%= form.label :author, style: "display: block" %>
+    <%= form.select :author_id,
+                    Author.all.collect { |a| [a.name, a.id] },
+                    { include_blank: true } %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

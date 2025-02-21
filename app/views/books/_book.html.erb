@@ -4,4 +4,10 @@
     <%= book.title %>
   </p>
 
+  <% if book.author.present? %>
+    <p>
+      <strong>Author:</strong>
+      <%= link_to book.author.name, book.author %>
+    </p>
+  <% end %>
 </div>

@@ -4,12 +4,14 @@
 
 <h1>Authors</h1>
 
-<div id="authors">
+<div id="authors" class="grid">
   <% @authors.each do |author| %>
-    <%= render author %>
-    <p>
-      <%= link_to "Show this author", author %>
-    </p>
+    <div class="card">
+      <%= render author %>
+      <p>
+        <%= link_to "Show this author", author %>
+      </p>
+    </div>
   <% end %>
 </div>
 
