@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :authorize_request, except: %i[ index show ]
   before_action :set_book, only: %i[ show edit update destroy ]
 
   # GET /books or /books.json
@@ -66,5 +67,9 @@ class BooksController < ApplicationController
     # Only allow a list of trusted parameters through.
     def book_params
       params.require(:book).permit(:title, :author_id)
+    end
+
+    def authorize_request
+      authorize Author
     end
 end

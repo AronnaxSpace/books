@@ -28,4 +28,4 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  not_authorized: "You are not authorized to perform this action."

@@ -14,6 +14,7 @@ require "faker"
   user = User.find_or_initialize_by(email: "user_#{i}@aronnax.space")
   next if user.persisted?
 
+  user.admin = i == 1
   user.update!(password: "Pa$$w0rD1")
   puts "Created user #{user.email}"
 end
