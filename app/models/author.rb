@@ -5,6 +5,8 @@ class Author < ApplicationRecord
   # validations
   validates :first_name, presence: true
 
+  has_one_attached :portrait
+
   def name
     "#{first_name} #{last_name}"
   end

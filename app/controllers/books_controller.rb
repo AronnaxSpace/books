@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[ index show ]
   before_action :authorize_request, except: %i[ index show ]
   before_action :set_book, only: %i[ show edit update destroy ]
 
@@ -66,7 +67,7 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:title, :author_id)
+      params.require(:book).permit(:cover, :title, :author_id)
     end
 
     def authorize_request

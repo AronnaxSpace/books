@@ -4,4 +4,6 @@ class Book < ApplicationRecord
 
   # validations
   validates :title, presence: true
+
+  has_one_attached :cover
 end

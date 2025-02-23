@@ -22,10 +22,14 @@ end
 loop do
   break if Author.count >= 5
 
-  Author.create!(
+  author = Author.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name
   )
+  if rand(3).positive?
+    author.portrait = File.open(Rails.root.join("app/assets/images/seeds/authors/portrait-#{rand(1..5)}.webp"))
+  end
+  author.save!
 
   puts "Created author #{Author.last.name}"
 end
@@ -33,10 +37,14 @@ end
 loop do
   break if Book.count >= 25
 
-  Book.create!(
+  book = Book.new(
     title: Faker::Book.title,
     author: Author.all.sample
   )
+  if rand(3).positive?
+    book.cover = File.open(Rails.root.join("app/assets/images/seeds/books/cover-#{rand(1..5)}.webp"))
+  end
+  book.save!
 
   puts "Created book #{Book.last.title}"
 end

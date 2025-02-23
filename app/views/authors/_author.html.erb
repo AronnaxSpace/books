@@ -1,4 +1,10 @@
 <div id="<%= dom_id author %>">
+  <% if author.portrait.attached? %>
+    <div>
+      <%= image_tag author.portrait %>
+    </div>
+  <% end %>
+
   <p>
     <strong>First name:</strong>
     <%= author.first_name %>
