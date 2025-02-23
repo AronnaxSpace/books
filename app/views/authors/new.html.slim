@@ -1,0 +1,10 @@
+- content_for :title, "New author"
+
+h1 New author
+
+= render "form", author: @author
+
+br
+
+div
+  = link_to "Back to authors", authors_path

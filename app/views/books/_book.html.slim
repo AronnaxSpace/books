@@ -1,0 +1,15 @@
+div id=(dom_id book)
+  div
+    - if book.cover.attached?
+      = image_tag book.cover
+    - else
+      = image_tag "seeds/books/cover-default.webp"
+
+  p
+    strong Title:
+    = book.title
+
+  - if book.author.present?
+    p
+      strong Author:
+      = link_to book.author.name, book.author

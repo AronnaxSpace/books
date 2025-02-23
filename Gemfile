@@ -54,3 +54,4 @@ end
 
 gem "devise", "~> 4.9"
 gem "pundit", "~> 2.4"
+gem "slim", "~> 5.2"

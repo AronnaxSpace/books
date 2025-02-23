@@ -1,0 +1,14 @@
+p style="color: green" = notice
+
+- content_for :title, "Books"
+
+h1 Books
+
+div#books.grid
+  - @books.each do |book|
+    div.card
+      = render book
+      p
+        = link_to "Show this book", book
+
+= link_to "New book", new_book_path
