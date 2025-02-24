@@ -55,3 +55,7 @@ end
 gem "devise", "~> 4.9"
 gem "pundit", "~> 2.4"
 gem "slim", "~> 5.2"
+gem "capistrano", "~> 3.19"
+gem "capistrano-rails", "~> 1.7"
+gem "capistrano-passenger", "~> 0.2.1"
+gem "capistrano-rbenv", "~> 2.2"
