@@ -71,6 +71,6 @@ class BooksController < ApplicationController
     end
 
     def authorize_request
-      authorize Author
+      authorize Book
     end
 end

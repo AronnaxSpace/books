@@ -1,2 +1,2 @@
-class AuthorPolicy < ApplicationPolicy
+class BookPolicy < ApplicationPolicy
 end
