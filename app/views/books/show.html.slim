@@ -1,8 +1,14 @@
 = render @book
 
 div
-  = link_to "Edit this book", edit_book_path(@book)
-  | 
+  - if policy(Book).edit?
+    = link_to "Edit this book", edit_book_path(@book)
+    | |
   = link_to "Back to books", books_path
 
-  = button_to "Destroy this book", @book, method: :delete, class: "btn-danger"
+  - if policy(Book).destroy?
+    br
+    = link_to "Destroy this book",
+              @book,
+              class: "btn btn-danger",
+              data: { turbo_method: :delete, turbo_confirm: t("are_you_sure") }

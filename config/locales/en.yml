@@ -28,4 +28,5 @@
 #       enabled: "ON"
 
 en:
+  are_you_sure: "Are you sure?"
   not_authorized: "You are not authorized to perform this action."

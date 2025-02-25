@@ -1,8 +1,14 @@
 = render @author
 
 div
-  = link_to "Edit this author", edit_author_path(@author)
-  | 
+  - if policy(Author).edit?
+    = link_to "Edit this author", edit_author_path(@author)
+    | |
   = link_to "Back to authors", authors_path
 
-  = button_to "Destroy this author", @author, method: :delete, class: "btn-danger"
+  - if policy(Author).destroy?
+    br
+    = link_to "Destroy this author",
+              @author,
+              class: "btn btn-danger",
+              data: { turbo_method: :delete, turbo_confirm: t("are_you_sure") }

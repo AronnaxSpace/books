@@ -2,7 +2,8 @@
 
 h1 Authors
 
-= link_to "New author", new_author_path
+- if policy(Author).new?
+  = link_to "New author", new_author_path
 
 div#authors.grid
   - @authors.each do |author|

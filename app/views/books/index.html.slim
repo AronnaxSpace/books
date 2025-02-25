@@ -2,7 +2,8 @@
 
 h1 Books
 
-= link_to "New book", new_book_path
+- if policy(Book).new?
+  = link_to "New book", new_book_path
 
 div#books.grid
   - @books.each do |book|

@@ -25,6 +25,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: "Roboto", serif;
   font-optical-sizing: auto;
@@ -40,7 +44,9 @@ form select {
 }
 
 button,
+.btn,
 input[type="submit"] {
+  display: inline-block;
   background-color: #4CAF50;
   color: white;
   padding: 10px 20px;
@@ -48,9 +54,11 @@ input[type="submit"] {
   border: none;
   border-radius: var(--border-radius);
   cursor: pointer;
+  text-decoration: none;
 }
 
-button.btn-danger {
+button.btn-danger,
+.btn.btn-danger {
   background-color: #f44336;
 }
 
