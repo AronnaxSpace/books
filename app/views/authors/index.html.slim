@@ -1,8 +1,8 @@
-p style="color: green" = notice
-
 - content_for :title, "Authors"
 
 h1 Authors
+
+= link_to "New author", new_author_path
 
 div#authors.grid
   - @authors.each do |author|
@@ -10,5 +10,3 @@ div#authors.grid
       = render author
       p
         = link_to "Show this author", author
-
-= link_to "New author", new_author_path

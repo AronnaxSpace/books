@@ -14,13 +14,20 @@
  *= require_self
  */
 
-* {
-  margin: 0;
-  padding: 0;
+:root {
+  --border-radius: 8px;
+  --border-radius-half: 4px;
 }
 
-:root {
-  --border-radius: 4px;
+*, :after, :before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
 }
 
 form input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]),
@@ -43,8 +50,13 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+button.btn-danger {
+  background-color: #f44336;
+}
+
 img {
   max-width: 100%;
+  border-radius: var(--border-radius-half);
 }
 
 .container {
